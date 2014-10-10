@@ -7,10 +7,14 @@ exports.aceGetFilterStack = function(name, context){
 
 
 exports.aceCreateDomLine = function(name, args){
+  // processes each line, we want to only take the last line..
+
+  console.log("line");
   if (args.cls.indexOf('image') > -1) { // If it's an image
     var src;
     cls = args.cls.replace(/(^| )image:(\S+)/g, function(x0, space, image) {
       src = image;
+      console.log("image source", src);
       return space + "image image_" + image;
     });
 
